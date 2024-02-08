@@ -11,7 +11,7 @@ const config: GatsbyConfig = {
   graphqlTypegen: true,
   plugins: ["gatsby-plugin-styled-components", {
     resolve: "gatsby-plugin-google-gtag", options: {
-      trackingId: "G-LHF1Y5Z5BM",
+      trackingIds: "G-LHF1Y5Z5BM",
       head: true
     }
   }, "gatsby-plugin-image", "gatsby-plugin-sitemap", {
