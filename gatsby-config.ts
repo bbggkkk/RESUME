@@ -9,30 +9,51 @@ const config: GatsbyConfig = {
   // If you use VSCode you can also use the GraphQL plugin
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
-  plugins: ["gatsby-plugin-styled-components", {
-    resolve: "gatsby-plugin-google-gtag", options: {
-      trackingIds: ["G-LHF1Y5Z5BM"]
-    }
-  }, "gatsby-plugin-image", "gatsby-plugin-sitemap", {
-      resolve: 'gatsby-plugin-manifest',
+  plugins: [
+    "gatsby-plugin-styled-components",
+    {
+      resolve: "gatsby-plugin-google-gtag",
       options: {
-        "icon": "src/images/icon.png"
-      }
-    }, "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        "name": "images",
-        "path": "./src/images/"
+        trackingIds: ["G-LHF1Y5Z5BM"],
       },
-      __key: "images"
-    }, {
-      resolve: 'gatsby-source-filesystem',
+    },
+    "gatsby-plugin-image",
+    "gatsby-plugin-sitemap",
+    {
+      resolve: "gatsby-plugin-manifest",
       options: {
-        "name": "pages",
-        "path": "./src/pages/"
+        icon: "src/images/logo.png",
       },
-      __key: "pages"
-    }]
+    },
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: "./src/images/",
+      },
+      __key: "images",
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "pages",
+        path: "./src/pages/",
+      },
+      __key: "pages",
+    },
+    {
+      resolve: "gatsby-plugin-sass",
+      options: {
+        useResolveUrlLoader: {
+          options: {
+            debug: true,
+          },
+        },
+      },
+    },
+  ],
 };
 
 export default config;

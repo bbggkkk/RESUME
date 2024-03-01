@@ -1,0 +1,17 @@
+@import './tokens.scss';
+
+$token-color: map-get($token, 'color');
+$theme-light: (
+    'color': (
+        'body': map-get($token-color, 'gray700'),
+        'support': map-get($token-color, 'gray400'),
+    )
+);
+@function getColor($name){
+    $map: map-get($theme-light, 'color');
+    @return map-get($map, $name);
+}
+
+:export {
+    getColor: 10px;
+}
